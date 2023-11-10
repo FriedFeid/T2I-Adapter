@@ -182,7 +182,7 @@ def get_cond_canny(opt, cond_image, cond_inp_type='image', cond_model=None):
     canny = resize_numpy_image(canny, max_resolution=opt.max_resolution, resize_short_edge=opt.resize_short_edge)
     opt.H, opt.W = canny.shape[:2]
     if cond_inp_type == 'canny':
-        canny = img2tensor(canny)[0:1].unsqueeze(0) / 255.
+        canny = img2tensor(canny)[0:1].unsqueeze(0)  # / 255. FRIEDRICH
         canny = canny.to(opt.device)
     elif cond_inp_type == 'image':
         canny = cv2.Canny(canny, 100, 200)[..., None]

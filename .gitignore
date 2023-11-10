@@ -4,6 +4,10 @@ tmp/*
 # ignore images in examples folder
 examples/*/*
 
+/outputs/
+/annotator/ckpts/
+/models/
+
 *.DS_Store
 .idea
 

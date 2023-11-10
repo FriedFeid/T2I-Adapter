@@ -78,3 +78,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# # when input non-depth image
+# python test_adapter.py --which_cond canny --cond_path '/export/data/ffeiden/PaperControlnetXS/512_images/Portrait of a thoughtful young woman, photography, 4k.png' --cond_inp_type image --prompt "Portrait of a thoughtful young woman, photography, 4k" --sd_ckpt /export/data/vislearn/rother_subgroup/dzavadsk/models/pretrained_originals/StableDiffusion/v1-5-pruned.ckpt --resize_short_edge 512 --cond_tau 1.0 --cond_weight 1.0 --n_samples 2 --adapter_ckpt /export/data/vislearn/rother_subgroup/feiden/models/pretrained/T2I_Adapter/t2iadapter_canny_sd15v2.pth
+# when input depth image
+# python test_adapter.py --which_cond depth --cond_path '/export/data/ffeiden/PaperControlnetXS/512_images/Portrait of a thoughtful young woman, photography, 4k.png' --cond_inp_type image --prompt "Portrait of a thoughtful young woman, photography, 4k" --sd_ckpt /export/data/vislearn/rother_subgroup/dzavadsk/models/pretrained_originals/StableDiffusion/v1-5-pruned.ckpt --resize_short_edge 512 --cond_tau 1.0 --cond_weight 1.0 --n_samples 2 --adapter_ckpt /export/data/vislearn/rother_subgroup/feiden/models/pretrained/T2I_Adapter/t2iadapter_depth_sd15v2.pth
+
+# python test_adapter.py --which_cond canny --cond_path '/export/data/ffeiden/ResultsControlNetXS/T2I/t2i_depth/steps-50/caption-2/000000.jpg' --cond_inp_type image --prompt "A baker is working in the kitchen rolling dough." --sd_ckpt /export/data/vislearn/rother_subgroup/dzavadsk/models/pretrained_originals/StableDiffusion/v1-5-pruned.ckpt --resize_short_edge 512 --cond_tau 1.0 --cond_weight 1.0 --n_samples 2 --adapter_ckpt /export/data/vislearn/rother_subgroup/feiden/models/pretrained/T2I_Adapter/t2iadapter_canny_sd15v2.pth

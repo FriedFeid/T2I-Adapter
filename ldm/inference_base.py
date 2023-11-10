@@ -265,7 +265,7 @@ def get_adapters(opt, cond_type: ExtraCondition):
     return adapter
 
 
-def diffusion_inference(opt, model, sampler, adapter_features, append_to_context=None):
+def diffusion_inference(opt, model, sampler, adapter_features, append_to_context=None, batch_size=1):
     # get text embedding
     c = model.get_learned_conditioning([opt.prompt])
     if opt.scale != 1.0:
@@ -282,7 +282,7 @@ def diffusion_inference(opt, model, sampler, adapter_features, append_to_context
     samples_latents, _ = sampler.sample(
         S=opt.steps,
         conditioning=c,
-        batch_size=1,
+        batch_size=batch_size,
         shape=shape,
         verbose=False,
         unconditional_guidance_scale=opt.scale,
